@@ -694,7 +694,7 @@ public class ActivityManagerService extends IActivityManager.Stub
 
     private final ActivityStartController mActivityStartController;
 
-    private final ClientLifecycleManager mLifecycleManager;
+    private final com.android.server.am.ClientLifecycleManager mLifecycleManager;
 
     final TaskChangeNotificationController mTaskChangeNotificationController;
 

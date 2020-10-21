@@ -122,7 +122,7 @@ public class TransactionExecutor {
     }
 
     /** Transition to the final state if requested by the transaction. */
-    private void executeLifecycleState(ClientTransaction transaction) {
+    private void executeLifecycleState(android.app.servertransaction.ClientTransaction transaction) {
         final ActivityLifecycleItem lifecycleItem = transaction.getLifecycleStateRequest();
         if (lifecycleItem == null) {
             // No lifecycle request, return early.

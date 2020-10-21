@@ -1803,7 +1803,7 @@ public final class ActivityThread extends ClientTransactionHandler {
                     handleRunIsolatedEntryPoint((String) ((SomeArgs) msg.obj).arg1,
                             (String[]) ((SomeArgs) msg.obj).arg2);
                     break;
-                case EXECUTE_TRANSACTION://19
+                case EXECUTE_TRANSACTION://19   TransactionExecutor.execute
                     final ClientTransaction transaction = (ClientTransaction) msg.obj;
                     mTransactionExecutor.execute(transaction);
                     if (isSystem()) {
@@ -3018,6 +3018,8 @@ public final class ActivityThread extends ClientTransactionHandler {
     }
 
     /**
+     * 在ActivityStackSuperVisor.realStartActivityLocked启动一个事务，这个事务包含了create start resume
+     *
      * Extended implementation of activity launch. Used when server requests a launch or relaunch.
      */
     @Override//23

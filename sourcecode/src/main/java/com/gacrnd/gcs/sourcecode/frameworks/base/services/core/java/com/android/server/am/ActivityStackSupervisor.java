@@ -305,7 +305,7 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
     /** The number of distinct task ids that can be assigned to the tasks of a single user */
     private static final int MAX_TASK_IDS_PER_USER = UserHandle.PER_USER_RANGE;
 
-    final ActivityManagerService mService;
+    final com.android.server.am.ActivityManagerService mService;
 
     /** The historial list of recent tasks including inactive tasks */
     RecentTasks mRecentTasks;
@@ -1529,12 +1529,13 @@ public class ActivityStackSupervisor extends ConfigurationContainer implements D
                         mergedConfiguration.getGlobalConfiguration(),
                         mergedConfiguration.getOverrideConfiguration(), r.compat,
                         r.launchedFromPackage, task.voiceInteractor, app.repProcState, r.icicle,
-                        r.persistentState, results, newIntents, mService.isNextTransitionForward(),
+                        r.persistentState, results, newIntents, mService.isNextTransitionForward(),  /*mService.isNextTransitionForward()获得start*/
                         profilerInfo));
 
                 // Set desired final state.
                 final ActivityLifecycleItem lifecycleItem;
                 if (andResume) {
+                    // 获得resume
                     lifecycleItem = ResumeActivityItem.obtain(mService.isNextTransitionForward());
                 } else {
                     lifecycleItem = PauseActivityItem.obtain();

@@ -48,7 +48,7 @@ public class ClientTransaction implements Parcelable, ObjectPoolItem {
      * Final lifecycle state in which the client activity should be after the transaction is
      * executed.
      */
-    private ActivityLifecycleItem mLifecycleStateRequest;
+    private android.app.servertransaction.ActivityLifecycleItem mLifecycleStateRequest;
 
     /** Target client. */
     private IApplicationThread mClient;

@@ -30,7 +30,7 @@ import android.os.Parcelable;
  * @see com.android.server.am.ClientLifecycleManager
  * @hide
  */
-public abstract class ClientTransactionItem implements BaseClientRequest, Parcelable {
+public abstract class ClientTransactionItem implements android.app.servertransaction.BaseClientRequest, Parcelable {
 
     /** Get the state that must follow this callback. */
     @LifecycleState
